@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/FibonacciHeap.dir/main.cpp.o CMakeFiles/FibonacciHeap.dir/lib/Tests/test.cpp.o  -o FibonacciHeap lib/libgtestd.a lib/libgtest_maind.a lib/libgtestd.a -pthread 
