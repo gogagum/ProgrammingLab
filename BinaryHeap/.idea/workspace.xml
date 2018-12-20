@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="Heap" targetName="gmock" />
+      <config projectName="Heap" targetName="Heap" />
+      <config projectName="Heap" targetName="gtest" />
+      <config projectName="Heap" targetName="gtest_main" />
+      <config projectName="Heap" targetName="gmock_main" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e96523f0-baaf-46d4-ae9a-86e0374580ed" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/BinaryHeap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/BinaryHeap.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.12.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.12.3/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.12.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.12.3/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.12.3/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.12.3/CMakeSystem.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BinaryHeap.dir/CXX.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BinaryHeap.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BinaryHeap.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BinaryHeap.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BinaryHeap.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BinaryHeap.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BinaryHeap.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BinaryHeap.dir/lib/Tests/test.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BinaryHeap.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BinaryHeap.dir/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BinaryHeap.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeError.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeError.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/erase_tests/test_1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/erase_tests/test_10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/erase_tests/test_11.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/erase_tests/test_12.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/erase_tests/test_13.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/erase_tests/test_14.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/erase_tests/test_15.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/erase_tests/test_16.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/erase_tests/test_17.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/erase_tests/test_18.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/erase_tests/test_19.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/erase_tests/test_2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/erase_tests/test_20.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/erase_tests/test_3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/erase_tests/test_4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/erase_tests/test_5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/erase_tests/test_6.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/erase_tests/test_7.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/erase_tests/test_8.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/erase_tests/test_9.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/insert_tests/insert_test_10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/insert_tests/insert_test_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/insert_tests/insert_test_1000.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/insert_tests/insert_test_10000.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/insert_tests/insert_test_100000.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/insert_tests/insert_test_1000000.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/insert_tests/insert_test_10000000.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/insert_tests/test_1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/insert_tests/test_10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/insert_tests/test_11.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/insert_tests/test_12.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/insert_tests/test_13.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/insert_tests/test_14.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/insert_tests/test_15.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/insert_tests/test_16.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/insert_tests/test_17.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/insert_tests/test_18.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/insert_tests/test_19.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/insert_tests/test_2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/insert_tests/test_20.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/insert_tests/test_3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/insert_tests/test_4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/insert_tests/test_5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/insert_tests/test_6.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/insert_tests/test_7.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/insert_tests/test_8.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/insert_tests/test_9.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/googletest-master/googlemock/CMakeFiles/gmock.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/googletest-master/googlemock/CMakeFiles/gmock.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/googletest-master/googlemock/CMakeFiles/gmock.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/googletest-master/googlemock/CMakeFiles/gmock.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/googletest-master/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/googletest-master/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/googletest-master/googlemock/gtest/CMakeFiles/gtest.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/googletest-master/googlemock/gtest/CMakeFiles/gtest.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/googletest-master/googlemock/gtest/CMakeFiles/gtest.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/googletest-master/googlemock/gtest/CMakeFiles/gtest.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/googletest-master/googlemock/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/googletest-master/googlemock/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/googletest-master/googlemock/gtest/CMakeFiles/gtest_main.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/googletest-master/googlemock/gtest/CMakeFiles/gtest_main.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/googletest-master/googlemock/gtest/CMakeFiles/gtest_main.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/googletest-master/googlemock/gtest/CMakeFiles/gtest_main.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/googletest-master/googlemock/gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/googletest-master/googlemock/gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgmock_maind.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgmock_maind.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgmockd.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgmockd.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgtest_maind.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgtest_maind.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgtestd.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgtestd.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/test_maker" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Tests/BinaryHeap.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Tests/DynamicArray.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Tests/DynamicArray.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Tests/erase_tests/test_1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Tests/erase_tests/test_10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Tests/erase_tests/test_11.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Tests/erase_tests/test_12.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Tests/erase_tests/test_13.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Tests/erase_tests/test_14.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Tests/erase_tests/test_15.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Tests/erase_tests/test_16.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Tests/erase_tests/test_17.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Tests/erase_tests/test_18.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Tests/erase_tests/test_19.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Tests/erase_tests/test_2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Tests/erase_tests/test_20.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Tests/erase_tests/test_3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Tests/erase_tests/test_4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Tests/erase_tests/test_5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Tests/erase_tests/test_6.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Tests/erase_tests/test_7.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Tests/erase_tests/test_8.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Tests/erase_tests/test_9.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Tests/test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Tests/test.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Tests/test_maker" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Tests/test_maker.cpp" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/Tests/DynamicArray.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1455">
+              <caret line="97" selection-start-line="97" selection-end-line="97" />
+              <folding>
+                <element signature="e#93#110#0" expanded="true" />
+                <element signature="e#140#152#0" expanded="true" />
+                <element signature="e#573#592#0" expanded="true" />
+                <element signature="e#2642#2654#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/Tests/test.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2745">
+              <caret line="183" lean-forward="true" selection-start-line="183" selection-end-line="183" />
+              <folding>
+                <element signature="e#42#66#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/googletest-master/googletest/src/gtest.cc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36765">
+              <caret line="2451" selection-start-line="2451" selection-end-line="2451" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/Tests/Heap.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="990">
+              <caret line="66" column="39" selection-start-line="66" selection-start-column="39" selection-end-line="66" selection-end-column="39" />
+              <folding>
+                <element signature="e#1729#1745#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/lib/Tests/DynamicArray.hpp" />
+        <option value="$PROJECT_DIR$/lib/Tests/Heap.hpp" />
+        <option value="$PROJECT_DIR$/lib/Tests/test.cpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="3840" />
+    <option name="y" value="31" />
+    <option name="width" value="1920" />
+    <option name="height" value="1019" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.BinaryHeap">
+    <configuration name="BigTests.test100" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="BinaryHeap" TARGET_NAME="Heap" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="BinaryHeap" RUN_TARGET_NAME="Heap" TEST_CLASS="BigTests" TEST_METHOD="test100" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BigTests.test1000" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="BinaryHeap" TARGET_NAME="Heap" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="BinaryHeap" RUN_TARGET_NAME="Heap" TEST_CLASS="BigTests" TEST_METHOD="test1000" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BigTests.test10000" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="BinaryHeap" TARGET_NAME="Heap" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="BinaryHeap" RUN_TARGET_NAME="Heap" TEST_CLASS="BigTests" TEST_METHOD="test10000" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BigTests.test1000000" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="BinaryHeap" TARGET_NAME="Heap" RUN_TARGET_PROJECT_NAME="BinaryHeap" RUN_TARGET_NAME="Heap" TEST_CLASS="BigTests" TEST_METHOD="test1000000" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HeapConstructor.DefaultConstructor" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="BinaryHeap" TARGET_NAME="Heap" RUN_TARGET_PROJECT_NAME="BinaryHeap" RUN_TARGET_NAME="Heap" TEST_CLASS="HeapConstructor" TEST_METHOD="DefaultConstructor" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BinaryHeap" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="BinaryHeap" TARGET_NAME="BinaryHeap" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="BinaryHeap" RUN_TARGET_NAME="BinaryHeap">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" EXPLICIT_BUILD_TARGET_NAME="all">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gmock" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="BinaryHeap" TARGET_NAME="gmock" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gmock_main" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="BinaryHeap" TARGET_NAME="gmock_main" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gtest" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="BinaryHeap" TARGET_NAME="gtest" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gtest_main" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="BinaryHeap" TARGET_NAME="gtest_main" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Build All" />
+      <item itemvalue="Application.BinaryHeap" />
+      <item itemvalue="Application.gmock" />
+      <item itemvalue="Application.gmock_main" />
+      <item itemvalue="Application.gtest" />
+      <item itemvalue="Application.gtest_main" />
+      <item itemvalue="Google Test.BigTests.test10000" />
+      <item itemvalue="Google Test.BigTests.test1000" />
+      <item itemvalue="Google Test.BigTests.test100" />
+      <item itemvalue="Google Test.HeapConstructor.DefaultConstructor" />
+      <item itemvalue="Google Test.BigTests.test1000000" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Google Test.BigTests.test1000000" />
+        <item itemvalue="Google Test.HeapConstructor.DefaultConstructor" />
+        <item itemvalue="Google Test.BigTests.test100" />
+        <item itemvalue="Google Test.BigTests.test1000" />
+        <item itemvalue="Google Test.BigTests.test10000" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e96523f0-baaf-46d4-ae9a-86e0374580ed" name="Default Changelist" comment="" />
+      <created>1542459834179</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1542459834179</updated>
+      <workItem from="1542459838754" duration="34352000" />
+      <workItem from="1542884795664" duration="1836000" />
+      <workItem from="1543052702973" duration="5691000" />
+      <workItem from="1543082394903" duration="179000" />
+      <workItem from="1543225394337" duration="3257000" />
+      <workItem from="1545342093995" duration="259000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="HeapConstructor_ConstructorFromIterators - 2018.11.26 at 13h 19m 04s.xml">
+      <configuration name="HeapConstructor.ConstructorFromIterators" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="HeapConstructor_CustomComparator - 2018.11.26 at 13h 48m 44s.xml">
+      <configuration name="HeapConstructor.CustomComparator" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="HeapConstructor_CustomComparator - 2018.11.26 at 13h 49m 12s.xml">
+      <configuration name="HeapConstructor.CustomComparator" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="HeapConstructor_CustomComparator - 2018.11.26 at 13h 58m 16s.xml">
+      <configuration name="HeapConstructor.CustomComparator" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="BigTests_test100000 - 2018.11.26 at 13h 58m 27s.xml">
+      <configuration name="BigTests.test100000" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="BigTests_test10000 - 2018.11.26 at 13h 58m 37s.xml">
+      <configuration name="BigTests.test10000" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="BigTests_test1000 - 2018.11.26 at 13h 58m 43s.xml">
+      <configuration name="BigTests.test1000" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="BigTests_test100 - 2018.11.26 at 13h 58m 50s.xml">
+      <configuration name="BigTests.test100" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="HeapConstructor_DefaultConstructor - 2018.12.21 at 00h 43m 35s.xml">
+      <configuration name="HeapConstructor.DefaultConstructor" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="BigTests_test1000000 - 2018.12.21 at 00h 43m 44s.xml">
+      <configuration name="BigTests.test1000000" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="45574000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="31" width="1920" height="1019" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32884398" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Messages" order="8" visible="true" weight="0.32884398" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="CMake" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.25" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="1" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Messages" order="4" visible="true" weight="0.32921347" />
+      <window_info anchor="bottom" id="CMake" order="5" />
+      <window_info anchor="bottom" id="Message" order="6" />
+      <window_info anchor="bottom" id="Find" order="7" />
+      <window_info anchor="bottom" id="Run" order="8" weight="0.32921347" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="12" />
+      <window_info anchor="right" id="Database" order="0" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file:///usr/include/c++/5/ext/atomicity.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="95" selection-start-line="95" selection-end-line="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/5/bits/shared_ptr_base.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12990">
+          <caret line="866" selection-start-line="866" selection-end-line="866" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/5/bits/shared_ptr.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1380">
+          <caret line="92" selection-start-line="92" selection-end-line="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/googletest-master/googletest/include/gtest/gtest.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="808">
+          <caret line="1457" selection-start-line="1457" selection-end-line="1457" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Tests/DynamicArray.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1455">
+          <caret line="97" selection-start-line="97" selection-end-line="97" />
+          <folding>
+            <element signature="e#93#110#0" expanded="true" />
+            <element signature="e#140#152#0" expanded="true" />
+            <element signature="e#573#592#0" expanded="true" />
+            <element signature="e#2642#2654#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/googletest-master/googletest/src/gtest.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36765">
+          <caret line="2451" selection-start-line="2451" selection-end-line="2451" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Tests/Heap.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="66" column="39" selection-start-line="66" selection-start-column="39" selection-end-line="66" selection-end-column="39" />
+          <folding>
+            <element signature="e#1729#1745#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Tests/test.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2745">
+          <caret line="183" lean-forward="true" selection-start-line="183" selection-end-line="183" />
+          <folding>
+            <element signature="e#42#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
