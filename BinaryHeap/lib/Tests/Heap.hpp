@@ -17,17 +17,22 @@ bool default_comparator(T element1, T element2) {
     return element1 < element2;
 }
 
+int parent_index(int index) {
+    return (index - 1) / 2;
+}
+
 template <typename KeyType>
 class node_ptr{
 public:
     template <typename> friend class Heap;
-    node_ptr() { };
+    node_ptr() = default;
     node_ptr(const node_ptr<KeyType> & other) : key_ptr_(other.key_ptr_), index_ptr_(other.index_ptr_) { }
-    void operator = (const node_ptr<KeyType> & other) {
+    node_ptr<KeyType>& operator = (const node_ptr<KeyType> & other) {
         key_ptr_ = other.key_ptr_;
         index_ptr_ = other.index_ptr_;
+        return *this;
     }
-    ~node_ptr() { }
+    ~node_ptr() = default;
 private:
     node_ptr(int index, const std::shared_ptr<KeyType> & key_ptr) : key_ptr_(key_ptr), index_ptr_(new int) {
         *index_ptr_ = index;
@@ -48,7 +53,7 @@ private:
 template <typename KeyType>
 class Heap {
 public:
-    Heap(bool (*comp)(KeyType, KeyType) = default_comparator) : size_(0), buffer_(0, node_ptr<KeyType>()), comp_(comp) { }
+    explicit Heap(bool (*comp)(KeyType, KeyType) = default_comparator) : size_(0), buffer_(0, node_ptr<KeyType>()), comp_(comp) { }
 
     Heap(KeyType* array, size_t size, bool (*comp)(KeyType, KeyType) = default_comparator) :
      size_(size), buffer_(size, node_ptr<KeyType>()), comp_(comp) {
@@ -74,10 +79,10 @@ public:
     }
 
     void sift_up (int index) {
-        while ( index != 0 && comp_(*(buffer_[index].key_ptr_), *(buffer_[(index - 1) / 2].key_ptr_)) ) {
-            std::swap( buffer_[index], buffer_[(index - 1) / 2]);
-            std::swap( buffer_[index].index(), buffer_[(index - 1) / 2].index());
-            index = (index - 1) / 2;
+        while ( index != 0 && comp_(*(buffer_[index].key_ptr_), *(buffer_[parent_index(index)].key_ptr_)) ) {
+            std::swap( buffer_[index], buffer_[parent_index(index)]);
+            std::swap( buffer_[index].index(), buffer_[parent_index(index)].index());
+            index = parent_index(index);
         }
     }
 
@@ -100,11 +105,11 @@ public:
 
     node_ptr<KeyType> insert(KeyType key) {
         std::shared_ptr<KeyType> new_key_ptr(new KeyType (key));
-        node_ptr<KeyType> new_node_ptr(size_, new_key_ptr);
+        node_ptr<KeyType> new_node_ptr(static_cast<int> (size_), new_key_ptr);
 
         buffer_.push_back(new_node_ptr);
         size_++;
-        sift_up(size_ - 1);
+        sift_up(static_cast<int> (size_));
         return new_node_ptr;
     }
 
@@ -117,8 +122,8 @@ public:
         assert (!empty());
         KeyType to_return = buffer_[0].key();
         buffer_[0] = buffer_[size_-1];
-        buffer_.erase(size_ - 1);
-        size_--;
+        buffer_.erase(static_cast<int> (size_) - 1);
+        --size_;
         sift_down(0);
         return to_return;
     }
@@ -127,9 +132,9 @@ public:
         int erase_index = *pointer.index_ptr_;
         std::swap(buffer_[size_ - 1], buffer_[erase_index]);
         std::swap(buffer_[size_ - 1].index(), buffer_[erase_index].index());
-        buffer_.erase(size_ - 1);
-        size_ --;
-        if (erase_index > 0 && comp_(buffer_[erase_index].key(), buffer_[(erase_index - 1) / 2].key())) {
+        buffer_.erase(static_cast<int> (size_) - 1);
+        --size_;
+        if (erase_index > 0 && comp_(buffer_[erase_index].key(), buffer_[parent_index(erase_index)].key())) {
             sift_up(erase_index);
         }
         else {
@@ -140,7 +145,7 @@ public:
     void change( node_ptr < KeyType > pointer, KeyType key) {
         int change_index = pointer.index();
         pointer.key() = key;
-        if (change_index > 0 && comp_(buffer_[change_index].key(), buffer_[(change_index - 1) / 2].key())) {
+        if (change_index > 0 && comp_(buffer_[change_index].key(), buffer_[parent_index(change_index)].key())) {
             sift_up(change_index);
         }
         else {
@@ -156,10 +161,10 @@ public:
         return size_;
     }
 
-    ~ Heap() { }
+    ~ Heap() = default;
 private:
     void heapify() {
-        for (int i  = size_; i >= 0; --i) {
+        for (int i  = static_cast<int> (size_); i >= 0; --i) {
             sift_down(i);
         }
     }
