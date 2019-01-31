@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/Heap.dir/main.cpp.o CMakeFiles/Heap.dir/lib/Tests/test.cpp.o  -o Heap lib/libgtestd.a lib/libgtest_maind.a lib/libgtestd.a -pthread 
