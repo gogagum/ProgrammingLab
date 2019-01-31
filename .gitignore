@@ -1,1 +1,5 @@
 BinomialHeap/.idea/
+BinomialHeap/cmake-build-debug/BinomialHeap
+BinomialHeap/cmake-build-debug/test_maker
+BinomialHeap/cmake-build-debug/CMakeFiles/
+BinomialHeap/cmake-build-debug/lib/

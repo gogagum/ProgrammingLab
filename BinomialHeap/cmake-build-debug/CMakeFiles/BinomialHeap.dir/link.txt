@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/BinomialHeap.dir/main.cpp.o CMakeFiles/BinomialHeap.dir/lib/Tests/test.cpp.o  -o BinomialHeap lib/libgtestd.a lib/libgtest_maind.a lib/libgtestd.a -pthread 
