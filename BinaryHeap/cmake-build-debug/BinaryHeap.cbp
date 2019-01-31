@@ -17,21 +17,21 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="install/strip">
+			<Target title="edit_cache">
 				<Option working_dir="/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="install/local">
+			<Target title="install/strip">
 				<Option working_dir="/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -99,11 +99,21 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="edit_cache">
+			<Target title="list_install_components">
 				<Option working_dir="/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -114,16 +124,6 @@
 				<Option type="4"/>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j4 -f &quot;/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="list_install_components">
-				<Option working_dir="/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -338,7 +338,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/gogagum/CLionProjects/Lab/BinaryHeap/lib/Tests/Heap.hpp">
+		<Unit filename="/home/gogagum/CLionProjects/Lab/BinaryHeap/lib/Tests/BinaryHeap.hpp">
 			<Option target="BinaryHeap"/>
 		</Unit>
 		<Unit filename="/home/gogagum/CLionProjects/Lab/BinaryHeap/lib/Tests/test.cpp">

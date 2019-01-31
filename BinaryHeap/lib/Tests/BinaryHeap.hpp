@@ -2,8 +2,8 @@
 // Created by gogagum on 25.10.18.
 //
 
-#ifndef HEAP_HPP
-#define HEAP_HPP
+#ifndef BINARY_HEAP_HPP
+#define BINARY_HEAP_HPP
 
 #include "DynamicArray.hpp"
 #include <glob.h>
@@ -24,7 +24,7 @@ int parent_index(int index) {
 template <typename KeyType>
 class node_ptr{
 public:
-    template <typename> friend class Heap;
+    template <typename> friend class BinaryHeap;
     node_ptr() = default;
     node_ptr(const node_ptr<KeyType> & other) : key_ptr_(other.key_ptr_), index_ptr_(other.index_ptr_) { }
     node_ptr<KeyType>& operator = (const node_ptr<KeyType> & other) {
@@ -51,11 +51,11 @@ private:
 };
 
 template <typename KeyType>
-class Heap {
+class BinaryHeap {
 public:
-    explicit Heap(bool (*comp)(KeyType, KeyType) = default_comparator) : size_(0), buffer_(0, node_ptr<KeyType>()), comp_(comp) { }
+    explicit BinaryHeap(bool (*comp)(KeyType, KeyType) = default_comparator) : size_(0), buffer_(0, node_ptr<KeyType>()), comp_(comp) { }
 
-    Heap(KeyType* array, size_t size, bool (*comp)(KeyType, KeyType) = default_comparator) :
+    BinaryHeap(KeyType* array, size_t size, bool (*comp)(KeyType, KeyType) = default_comparator) :
      size_(size), buffer_(size, node_ptr<KeyType>()), comp_(comp) {
         for (int i = 0; i < size_; ++i) {
             buffer_[i].key_ptr_ = std::shared_ptr<KeyType>(new KeyType);
@@ -67,7 +67,7 @@ public:
     }
 
     template<class Iterator>
-    Heap(Iterator iterator1, Iterator iterator2, bool (*comp)(KeyType, KeyType) = default_comparator) : comp_(comp), size_(){
+    BinaryHeap(Iterator iterator1, Iterator iterator2, bool (*comp)(KeyType, KeyType) = default_comparator) : comp_(comp), size_(){
         int index = 0;
         for (auto i = iterator1; i != iterator2; ++i) {
             std::shared_ptr<KeyType> new_key_ptr(new KeyType (*i));
@@ -161,7 +161,7 @@ public:
         return size_;
     }
 
-    ~ Heap() = default;
+    ~ BinaryHeap() = default;
 private:
     void heapify() {
         for (int i  = static_cast<int> (size_); i >= 0; --i) {
@@ -175,4 +175,4 @@ private:
 };
 
 
-#endif //HEAP_HEAP_H
+#endif //BINARY_HEAP_H

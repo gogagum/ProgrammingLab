@@ -10,7 +10,7 @@
 #include <cstdlib>
 #include <string>
 #include <fstream>
-#include "Heap.hpp"
+#include "BinaryHeap.hpp"
 
 struct complex_num{
     complex_num() {}
@@ -35,14 +35,14 @@ bool comp(complex_num n1, complex_num n2) {
 }
 
 TEST(HeapConstructor, DefaultConstructor) {
-    Heap<int> test_heap;
+    BinaryHeap<int> test_heap;
     EXPECT_EQ(test_heap.size(), 0);
 }
 
 TEST(HeapConstructor, ConstructorFromArray)
 {
     int array[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    Heap<int> test_heap(array, 10);
+    BinaryHeap<int> test_heap(array, 10);
     EXPECT_EQ(test_heap.size(), 10);
     EXPECT_EQ(test_heap.get_root(), 1);
     EXPECT_EQ(test_heap.extract_root(), 1);
@@ -51,7 +51,7 @@ TEST(HeapConstructor, ConstructorFromArray)
 
 TEST(HeapConstructor, ConstructorFromIterators) {
     std::vector<int> test_vector = {5, 4, 3, 2, 1};
-    Heap<int> test_heap (test_vector.begin(), test_vector.end());
+    BinaryHeap<int> test_heap (test_vector.begin(), test_vector.end());
     for (int i = 0; i < 5; i++){
         EXPECT_EQ(test_heap.extract_root(), i + 1);
     }
@@ -59,7 +59,7 @@ TEST(HeapConstructor, ConstructorFromIterators) {
 
 TEST(HeapMethods, Insert) {
     int array[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    Heap<int> test_heap(array, 10);
+    BinaryHeap<int> test_heap(array, 10);
     EXPECT_EQ(test_heap.size(), 10);
     test_heap.insert(-6);
     EXPECT_EQ(test_heap.get_root(), -6);
@@ -67,14 +67,14 @@ TEST(HeapMethods, Insert) {
 
 TEST(HeapMethods, ExtractRoot) {
     int array[4] = {1, 2, 3, 4};
-    Heap<int> test_heap(array, 4);
+    BinaryHeap<int> test_heap(array, 4);
     EXPECT_EQ(test_heap.extract_root(), 1);
     EXPECT_EQ(test_heap.get_root(), 2);
 }
 
 
 TEST(HeapConstructor, CustomComparator) {
-    Heap<complex_num> test_heap(comp);
+    BinaryHeap<complex_num> test_heap(comp);
     complex_num c1(1, 2);
     complex_num c2(42, 42);
     complex_num c3(-1, 0);
@@ -86,7 +86,7 @@ TEST(HeapConstructor, CustomComparator) {
 
 TEST(node_ptr_using, insert_and_erase) {
     int array[4] = {1, 2, 3, 4};
-    Heap<int> test_heap(array, 4);
+    BinaryHeap<int> test_heap(array, 4);
     EXPECT_EQ(test_heap.get_root(), 1);
     auto ptr_m100 = test_heap.insert(-100);
     EXPECT_EQ(test_heap.get_root(), -100);
@@ -96,7 +96,7 @@ TEST(node_ptr_using, insert_and_erase) {
 
 TEST(node_ptr_using, insert_and_change) {
     int array[4] = {1, 2, 3, 4};
-    Heap<int> test_heap(array, 4);
+    BinaryHeap<int> test_heap(array, 4);
     EXPECT_EQ(test_heap.get_root(), 1);
     auto ptr_m100 = test_heap.insert(-100);
     EXPECT_EQ(test_heap.get_root(), -100);
@@ -105,7 +105,7 @@ TEST(node_ptr_using, insert_and_change) {
 }
 
 TEST(BigTests, test10) {
-    Heap<int> test_heap;
+    BinaryHeap<int> test_heap;
     int min = rand();
     test_heap.insert(min);
     for (int i = 1; i < 10; i++) {
@@ -118,7 +118,7 @@ TEST(BigTests, test10) {
 }
 
 TEST(BigTests, test100) {
-    Heap<int> test_heap;
+    BinaryHeap<int> test_heap;
     int min = rand();
     test_heap.insert(min);
     for (int i = 1; i < 100; i++) {
@@ -131,7 +131,7 @@ TEST(BigTests, test100) {
 }
 
 TEST(BigTests, test1000) {
-    Heap<int> test_heap;
+    BinaryHeap<int> test_heap;
     int min = rand();
     test_heap.insert(min);
     for (int i = 1; i < 1000; i++) {
@@ -144,7 +144,7 @@ TEST(BigTests, test1000) {
 }
 
 TEST(BigTests, test10000) {
-    Heap<int> test_heap;
+    BinaryHeap<int> test_heap;
     int min = rand();
     test_heap.insert(min);
     for (int i = 1; i < 10000; i++) {
@@ -157,7 +157,7 @@ TEST(BigTests, test10000) {
 }
 
 TEST(BigTests, test100000) {
-    Heap<int> test_heap;
+    BinaryHeap<int> test_heap;
     int min = rand();
     test_heap.insert(min);
     for (int i = 1; i < 100000; i++) {
@@ -170,7 +170,7 @@ TEST(BigTests, test100000) {
 }
 
 TEST(BigTests, test1000000) {
-    Heap<int> test_heap;
+    BinaryHeap<int> test_heap;
     int min = rand();
     test_heap.insert(min);
     for (int i = 1; i < 1000000; i++) {

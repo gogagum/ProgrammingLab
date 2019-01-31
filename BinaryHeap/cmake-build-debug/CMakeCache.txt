@@ -201,6 +201,12 @@ CMAKE_OBJCOPY:FILEPATH=/usr/bin/objcopy
 CMAKE_OBJDUMP:FILEPATH=/usr/bin/objdump
 
 //Value Computed by CMake
+CMAKE_PROJECT_DESCRIPTION:STATIC=
+
+//Value Computed by CMake
+CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
+
+//Value Computed by CMake
 CMAKE_PROJECT_NAME:STATIC=BinaryHeap
 
 //Value Computed by CMake
@@ -354,9 +360,9 @@ CMAKE_CACHEFILE_DIR:INTERNAL=/home/gogagum/CLionProjects/Lab/BinaryHeap/cmake-bu
 //Major version of cmake used to create the current loaded cache
 CMAKE_CACHE_MAJOR_VERSION:INTERNAL=3
 //Minor version of cmake used to create the current loaded cache
-CMAKE_CACHE_MINOR_VERSION:INTERNAL=12
+CMAKE_CACHE_MINOR_VERSION:INTERNAL=13
 //Patch version of cmake used to create the current loaded cache
-CMAKE_CACHE_PATCH_VERSION:INTERNAL=3
+CMAKE_CACHE_PATCH_VERSION:INTERNAL=2
 //ADVANCED property for variable: CMAKE_COLOR_MAKEFILE
 CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 //Path to CMake executable.
@@ -497,7 +503,7 @@ CMAKE_PLATFORM_INFO_INITIALIZED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_RANLIB
 CMAKE_RANLIB-ADVANCED:INTERNAL=1
 //Path to CMake installation.
-CMAKE_ROOT:INTERNAL=/home/gogagum/.local/share/umake/ide/clion/bin/cmake/linux/share/cmake-3.12
+CMAKE_ROOT:INTERNAL=/home/gogagum/.local/share/umake/ide/clion/bin/cmake/linux/share/cmake-3.13
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS
 CMAKE_SHARED_LINKER_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS_DEBUG
