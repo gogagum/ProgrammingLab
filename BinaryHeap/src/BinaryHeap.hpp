@@ -63,7 +63,7 @@ public:
             buffer_[i].key() = array[i];
             buffer_[i].index() = i;
         }
-        heapify();
+        FixHeapProperty();
     }
 
     template<class Iterator>
@@ -75,10 +75,10 @@ public:
             buffer_.push_back(new_node_ptr);
             ++size_;
         }
-        heapify();
+        FixHeapProperty();
     }
 
-    void sift_up (int index) {
+    void SiftUp (int index) {
         while ( index != 0 && comp_(*(buffer_[index].key_ptr_), *(buffer_[parent_index(index)].key_ptr_)) ) {
             std::swap( buffer_[index], buffer_[parent_index(index)]);
             std::swap( buffer_[index].index(), buffer_[parent_index(index)].index());
@@ -86,7 +86,7 @@ public:
         }
     }
 
-    void sift_down (int index) {
+    void SiftDown (int index) {
         while ( 2 * index + 1 < size_ ) {
             int left = 2 * index + 1;
             int right = 2  * index + 2;
@@ -109,63 +109,63 @@ public:
 
         buffer_.push_back(new_node_ptr);
         size_++;
-        sift_up(static_cast<int> (size_));
+        SiftUp(static_cast<int> (size_));
         return new_node_ptr;
     }
 
-    KeyType get_root() const {
-        assert (!empty());
+    KeyType GetRoot() const {
+        assert (!Empty());
         return buffer_[0].key();
     }
 
-    KeyType extract_root() {
-        assert (!empty());
+    KeyType ExtractRoot() {
+        assert (!Empty());
         KeyType to_return = buffer_[0].key();
         buffer_[0] = buffer_[size_-1];
         buffer_.erase(static_cast<int> (size_) - 1);
         --size_;
-        sift_down(0);
+        SiftDown(0);
         return to_return;
     }
 
-    void erase(node_ptr<KeyType> pointer) {
+    void Erase(node_ptr<KeyType> pointer) {
         int erase_index = *pointer.index_ptr_;
         std::swap(buffer_[size_ - 1], buffer_[erase_index]);
         std::swap(buffer_[size_ - 1].index(), buffer_[erase_index].index());
         buffer_.erase(static_cast<int> (size_) - 1);
         --size_;
         if (erase_index > 0 && comp_(buffer_[erase_index].key(), buffer_[parent_index(erase_index)].key())) {
-            sift_up(erase_index);
+            SiftUp(erase_index);
         }
         else {
-            sift_down(erase_index);
+            SiftDown(erase_index);
         }
     }
 
-    void change( node_ptr < KeyType > pointer, KeyType key) {
+    void Change( node_ptr < KeyType > pointer, KeyType key) {
         int change_index = pointer.index();
         pointer.key() = key;
         if (change_index > 0 && comp_(buffer_[change_index].key(), buffer_[parent_index(change_index)].key())) {
-            sift_up(change_index);
+            SiftUp(change_index);
         }
         else {
-            sift_down(change_index);
+            SiftDown(change_index);
         }
     }
 
-    bool empty() const {
+    bool Empty() const {
         return (size_ == 0);
     }
 
-    size_t size() const {
+    size_t Size() const {
         return size_;
     }
 
     ~ BinaryHeap() = default;
 private:
-    void heapify() {
+    void FixHeapProperty() {
         for (int i  = static_cast<int> (size_); i >= 0; --i) {
-            sift_down(i);
+            SiftDown(i);
         }
     }
 

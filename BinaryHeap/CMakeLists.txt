@@ -6,6 +6,6 @@ add_subdirectory(lib/googletest-master)
 include_directories(lib/googletest-master/googletest/include)
 include_directories(lib/googletest-master/googlemock/include)
 
-set(SOURCE_FILES main.cpp lib/Tests/BinaryHeap.hpp lib/Tests/test.cpp)
-add_executable(BinaryHeap ${SOURCE_FILES} lib/Tests/BinaryHeap.hpp lib/Tests/test.cpp)
+set(SOURCE_FILES main.cpp src/BinaryHeap.hpp lib/Tests/test.cpp)
+add_executable(BinaryHeap ${SOURCE_FILES} src/BinaryHeap.hpp lib/Tests/test.cpp)
 target_link_libraries(BinaryHeap gtest gtest_main)

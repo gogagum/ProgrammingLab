@@ -10,7 +10,7 @@
 #include <cstdlib>
 #include <string>
 #include <fstream>
-#include "BinaryHeap.hpp"
+#include "/home/gogagum/CLionProjects/Lab/BinaryHeap/src/BinaryHeap.hpp"
 
 struct complex_num{
     complex_num() {}
@@ -36,40 +36,40 @@ bool comp(complex_num n1, complex_num n2) {
 
 TEST(HeapConstructor, DefaultConstructor) {
     BinaryHeap<int> test_heap;
-    EXPECT_EQ(test_heap.size(), 0);
+    EXPECT_EQ(test_heap.Size(), 0);
 }
 
 TEST(HeapConstructor, ConstructorFromArray)
 {
     int array[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     BinaryHeap<int> test_heap(array, 10);
-    EXPECT_EQ(test_heap.size(), 10);
-    EXPECT_EQ(test_heap.get_root(), 1);
-    EXPECT_EQ(test_heap.extract_root(), 1);
-    EXPECT_EQ(test_heap.extract_root(), 2);
+    EXPECT_EQ(test_heap.Size(), 10);
+    EXPECT_EQ(test_heap.GetRoot(), 1);
+    EXPECT_EQ(test_heap.ExtractRoot(), 1);
+    EXPECT_EQ(test_heap.ExtractRoot(), 2);
 }
 
 TEST(HeapConstructor, ConstructorFromIterators) {
     std::vector<int> test_vector = {5, 4, 3, 2, 1};
     BinaryHeap<int> test_heap (test_vector.begin(), test_vector.end());
     for (int i = 0; i < 5; i++){
-        EXPECT_EQ(test_heap.extract_root(), i + 1);
+        EXPECT_EQ(test_heap.ExtractRoot(), i + 1);
     }
 }
 
 TEST(HeapMethods, Insert) {
     int array[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     BinaryHeap<int> test_heap(array, 10);
-    EXPECT_EQ(test_heap.size(), 10);
+    EXPECT_EQ(test_heap.Size(), 10);
     test_heap.insert(-6);
-    EXPECT_EQ(test_heap.get_root(), -6);
+    EXPECT_EQ(test_heap.GetRoot(), -6);
 }
 
 TEST(HeapMethods, ExtractRoot) {
     int array[4] = {1, 2, 3, 4};
     BinaryHeap<int> test_heap(array, 4);
-    EXPECT_EQ(test_heap.extract_root(), 1);
-    EXPECT_EQ(test_heap.get_root(), 2);
+    EXPECT_EQ(test_heap.ExtractRoot(), 1);
+    EXPECT_EQ(test_heap.GetRoot(), 2);
 }
 
 
@@ -81,27 +81,27 @@ TEST(HeapConstructor, CustomComparator) {
     test_heap.insert(c1);
     test_heap.insert(c2);
     test_heap.insert(c3);
-    EXPECT_EQ(test_heap.get_root(), c3);
+    EXPECT_EQ(test_heap.GetRoot(), c3);
 }
 
 TEST(node_ptr_using, insert_and_erase) {
     int array[4] = {1, 2, 3, 4};
     BinaryHeap<int> test_heap(array, 4);
-    EXPECT_EQ(test_heap.get_root(), 1);
+    EXPECT_EQ(test_heap.GetRoot(), 1);
     auto ptr_m100 = test_heap.insert(-100);
-    EXPECT_EQ(test_heap.get_root(), -100);
-    test_heap.erase(ptr_m100);
-    EXPECT_EQ(test_heap.get_root(), 1);
+    EXPECT_EQ(test_heap.GetRoot(), -100);
+    test_heap.Erase(ptr_m100);
+    EXPECT_EQ(test_heap.GetRoot(), 1);
 }
 
 TEST(node_ptr_using, insert_and_change) {
     int array[4] = {1, 2, 3, 4};
     BinaryHeap<int> test_heap(array, 4);
-    EXPECT_EQ(test_heap.get_root(), 1);
+    EXPECT_EQ(test_heap.GetRoot(), 1);
     auto ptr_m100 = test_heap.insert(-100);
-    EXPECT_EQ(test_heap.get_root(), -100);
-    test_heap.change(ptr_m100, -50);
-    EXPECT_EQ(test_heap.get_root(), -50);
+    EXPECT_EQ(test_heap.GetRoot(), -100);
+    test_heap.Change(ptr_m100, -50);
+    EXPECT_EQ(test_heap.GetRoot(), -50);
 }
 
 TEST(BigTests, test10) {
