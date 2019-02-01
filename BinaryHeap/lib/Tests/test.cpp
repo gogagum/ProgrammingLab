@@ -12,18 +12,6 @@
 #include <fstream>
 #include "/home/gogagum/CLionProjects/Lab/BinaryHeap/src/BinaryHeap.hpp"
 
-std::string int_to_str(unsigned int num){
-    std::string ret = "";
-    if (num == 0) {
-        return "0";
-    }
-    while (num != 0) {
-        ret = (char)('0' + num % 10) + ret;
-        num /= 10;
-    }
-    return ret;
-}
-
 struct complex_num{
     complex_num() {}
     complex_num(double imz, double rmz){
@@ -214,6 +202,6 @@ void big_insert_test(std::string test_file_name) {
 
 TEST(BigTests, InsertTests) {
     for (int i = 1; i <= 20; ++i ) {
-        big_insert_test("insert_tests/test_" + int_to_str(i) + ".txt");
+        big_insert_test("insert_tests/test_" + std::to_string(i) + ".txt");
     }
 }
