@@ -44,67 +44,67 @@ public:
                         nodes_to_merge[k] = merge_trees(nodes_to_merge[k*2], nodes_to_merge[k*2 + 1]);
                     }
                 }
-                roots_.push_back(nodes_to_merge[0]);
+                roots_.PushBack(nodes_to_merge[0]);
                 delete [] nodes_to_merge;
             }
             else {
-                roots_.push_back(nullptr);
+                roots_.PushBack(nullptr);
             }
         }
     }
 
     BinomialHeap(const BinomialHeap<KeyType> &other)
      : size_(other.size_), roots_(), comp_(other.comp_) {
-        for (int i = 0; i < other.roots_.size(); ++i) {
+        for (int i = 0; i < other.roots_.Size(); ++i) {
             if (other.roots_[i] != nullptr) {
                 shared_ptr<node<KeyType>> copied_node(new node<KeyType>);
                 copied_node->copy(*(other.roots_[i]));
-                roots_.push_back(copied_node);
+                roots_.PushBack(copied_node);
             }
             else {
-                roots_.push_back(nullptr);
+                roots_.PushBack(nullptr);
             }
         }
     }
 
-    void insert(KeyType key) {
+    void Insert(KeyType key) {
         BinomialHeap<KeyType> to_merge(comp_);
         shared_ptr<node<KeyType>> one_element_node(new node<KeyType>);
         one_element_node->value_ = key;
         one_element_node->degree_ = 0;
         ++to_merge.size_;
-        to_merge.roots_.push_back(one_element_node);
-        merge(to_merge);
+        to_merge.roots_.PushBack(one_element_node);
+        Merge(to_merge);
     }
 
-    KeyType get_min() const {
-        assert (!empty());
+    KeyType GetMin() const {
+        assert (!Empty());
         return roots_[find_index_of_min()]->value_;
     }
 
-    KeyType extract_min() {
-        assert(!empty());
+    KeyType ExtractMin() {
+        assert(!Empty());
         auto min_index = find_index_of_min();
         auto min_ptr = roots_[min_index];
         BinomialHeap<KeyType> heap_from_children;
-        for (int i = 0; i < min_ptr->children_.size(); ++i) {
-            heap_from_children.roots_.push_back(min_ptr->children_[i]);
+        for (int i = 0; i < min_ptr->children_.Size(); ++i) {
+            heap_from_children.roots_.PushBack(min_ptr->children_[i]);
         }
         KeyType to_return = min_ptr->value_;
         roots_[min_index] = nullptr;
-        merge(heap_from_children);
+        Merge(heap_from_children);
         --size_;
         return to_return;
     }
 
-    void merge(BinomialHeap<KeyType> &other) { //clears other
+    void Merge(BinomialHeap<KeyType> &other) { //clears other
         assert(comp_ == other.comp_);
         shared_ptr<node<KeyType>> remembered = nullptr;
-        size_ += other.size();
-        auto max_size_of_new_tree = max(roots_.size(), other.roots_.size()) + 1;
+        size_ += other.Size();
+        auto max_size_of_new_tree = max(roots_.Size(), other.roots_.Size()) + 1;
 
         for (int i = 0; i < max_size_of_new_tree; ++i) {
-            if (i < min(roots_.size(), other.roots_.size())) {
+            if (i < min(roots_.Size(), other.roots_.Size())) {
                 if (roots_[i] != nullptr && other.roots_[i] != nullptr) {
                     auto old_remembered = remembered;
                     remembered = merge_trees(roots_[i], other.roots_[i]);
@@ -135,7 +135,7 @@ public:
                 }
             }
             else {
-                if (i < roots_.size()) {
+                if (i < roots_.Size()) {
                     if (remembered != nullptr ) {
                         if (roots_[i] != nullptr) {
                             remembered = merge_trees(remembered, roots_[i]);
@@ -149,26 +149,26 @@ public:
                     }
                     continue;
                 }
-                if (i < other.roots_.size()) {
+                if (i < other.roots_.Size()) {
                     if (remembered == nullptr) {
-                        roots_.push_back(other.roots_[i]);
+                        roots_.PushBack(other.roots_[i]);
                     }
                     else {
                         if (other.roots_[i] != nullptr) {
                             remembered = merge_trees(remembered, other.roots_[i]);
-                            roots_.push_back(nullptr);
+                            roots_.PushBack(nullptr);
                         }
                         else {
-                            roots_.push_back(remembered);
+                            roots_.PushBack(remembered);
                             remembered = nullptr;
                         }
                     }
                     continue;
                 }
-                // i >= roots.size() && i >= other.roots.size()
+                // i >= roots.Size() && i >= other.roots.Size()
                 if (remembered != nullptr) {
                     if (remembered->degree_ == i) {
-                        roots_.push_back(remembered);
+                        roots_.PushBack(remembered);
                         remembered = nullptr;
                     }
                 } else {
@@ -176,25 +176,25 @@ public:
                 }
             }
         }
-        other.clear();
+        other.Clear();
     }
 
 
-    void merge_with_copy(const BinomialHeap<KeyType> &other) {
+    void MergeWithCopy(const BinomialHeap<KeyType> &other) {
         auto other_copy = new BinomialHeap<KeyType>(other);
-        merge(*other_copy);
+        Merge(*other_copy);
     }
 
-    void clear() {
-        roots_.clear();
+    void Clear() {
+        roots_.Clear();
         size_ = 0;
     }
 
-    bool empty () const {
+    bool Empty() const {
         return size_ == 0;
     }
 
-    size_t size () const {
+    size_t Size() const {
         return size_;
     }
 
@@ -210,10 +210,10 @@ private:
         void copy(const node<_KeyType> &other) {
             value_ = other.value_;
             degree_ = other.degree_;
-            for (int i = 0; i < other.children_.size(); ++i) {
+            for (int i = 0; i < other.children_.Size(); ++i) {
                 shared_ptr<node<_KeyType>> copied_node( new node<_KeyType> );
                 copied_node->copy(*other.children_[i]);
-                children_.push_back(copied_node);
+                children_.PushBack(copied_node);
             }
         }
         _KeyType value_;
@@ -227,18 +227,18 @@ private:
         if (comp_(n2->value_, n1->value_)) {
             swap(n1, n2);
         }
-        n1->children_.push_back(n2);
+        n1->children_.PushBack(n2);
         ++n1->degree_;
         return n1;
     }
 
     int find_index_of_min() const {
-        assert(!empty());
+        assert(!Empty());
         int min_index = 0;
         while (roots_[min_index] == nullptr) {
             ++min_index;
         }
-        for (int i = min_index; i < roots_.size(); ++i) {
+        for (int i = min_index; i < roots_.Size(); ++i) {
             if (roots_[i] != nullptr && comp_(roots_[i]->value_, roots_[min_index]->value_)) {
                 min_index = i;
             }
@@ -252,17 +252,17 @@ private:
 };
 
 template <typename KeyType>
-BinomialHeap<KeyType> merge_heaps_copies(const BinomialHeap<KeyType>& b1, const BinomialHeap<KeyType>& b2) {
+BinomialHeap<KeyType> MergeHeapsCopies(const BinomialHeap<KeyType> &b1, const BinomialHeap<KeyType> &b2) {
     BinomialHeap<KeyType> merged(b1);
-    merged.merge_with_copy(b2);
+    merged.MergeWithCopy(b2);
     return merged;
 }
 
 template <typename  KeyType>
-BinomialHeap<KeyType>& merge(BinomialHeap<KeyType>& b1, BinomialHeap<KeyType>& b2) {  //clears b1 & b2
+BinomialHeap<KeyType>& Merge(BinomialHeap<KeyType> &b1, BinomialHeap<KeyType> &b2) {  //clears b1 & b2
     auto *merged = new BinomialHeap<KeyType>;
-    merged->merge(b2);
-    merged->merge(b1);
+    merged->Merge(b2);
+    merged->Merge(b1);
     return *merged;
 }
 

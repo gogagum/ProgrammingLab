@@ -9,22 +9,11 @@
 
 using std::string;
 using std::ifstream;
-
-string int_to_str(unsigned int num){
-    string ret = "";
-    if (num == 0) {
-        return "0";
-    }
-    while (num != 0) {
-        ret = (char)('0' + num % 10) + ret;
-        num /= 10;
-    }
-    return ret;
-}
+using std::to_string;
 
 TEST(BinomialHeapConstructor, DefaultConstructor) {
     BinomialHeap<int> test_heap;
-    EXPECT_EQ(test_heap.size(), 0);
+    EXPECT_EQ(test_heap.Size(), 0);
 }
 
 TEST(BinomialHeapConstructor, ConstructorFromArray) {
@@ -33,8 +22,8 @@ TEST(BinomialHeapConstructor, ConstructorFromArray) {
         array[i] = i;
     }
     BinomialHeap<int> test_heap(array, 5);
-    EXPECT_EQ(test_heap.size(), 5);
-    EXPECT_EQ(test_heap.get_min(), 0);
+    EXPECT_EQ(test_heap.Size(), 5);
+    EXPECT_EQ(test_heap.GetMin(), 0);
 }
 
 TEST(BinomialHeapConstructor, copy_constructor) {
@@ -44,16 +33,16 @@ TEST(BinomialHeapConstructor, copy_constructor) {
     }
     BinomialHeap<int> test_heap1(array, 5);
     BinomialHeap<int> test_heap2(test_heap1);
-    EXPECT_EQ(test_heap2.size(), 5);
-    EXPECT_EQ(test_heap2.get_min(), 0);
+    EXPECT_EQ(test_heap2.Size(), 5);
+    EXPECT_EQ(test_heap2.GetMin(), 0);
 }
 
 TEST(BinomialHeapMethods, insert) {
     int array[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     BinomialHeap<int> test_heap(array, 10);
-    EXPECT_EQ(test_heap.size(), 10);
-    test_heap.insert(-6);
-    EXPECT_EQ(test_heap.get_min(), -6);
+    EXPECT_EQ(test_heap.Size(), 10);
+    test_heap.Insert(-6);
+    EXPECT_EQ(test_heap.GetMin(), -6);
 }
 
 TEST(BinomialHeapMethods, merge_two_heaps) {
@@ -61,42 +50,42 @@ TEST(BinomialHeapMethods, merge_two_heaps) {
     int array2[10] = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20};
     BinomialHeap<int> test_heap1(array1, 10);
     BinomialHeap<int> test_heap2(array2, 10);
-    BinomialHeap<int> result_heap = merge(test_heap1, test_heap2);
-    EXPECT_EQ(result_heap.size(), 20);
-    EXPECT_EQ(result_heap.get_min(), 1);
-    EXPECT_EQ(test_heap1.size(), 0);
-    EXPECT_EQ(test_heap2.size(), 0);
+    BinomialHeap<int> result_heap = Merge(test_heap1, test_heap2);
+    EXPECT_EQ(result_heap.Size(), 20);
+    EXPECT_EQ(result_heap.GetMin(), 1);
+    EXPECT_EQ(test_heap1.Size(), 0);
+    EXPECT_EQ(test_heap2.Size(), 0);
 }
 
-TEST(BinomialHeapMethods, merge_heaps_copies) {
+TEST(BinomialHeapMethods, MergeHeapsCopies) {
     int array1[10] = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19};
     int array2[10] = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20};
     BinomialHeap<int> test_heap1(array1, 10);
     BinomialHeap<int> test_heap2(array2, 10);
-    BinomialHeap<int> result_heap = merge_heaps_copies(test_heap1, test_heap2);
-    EXPECT_EQ(result_heap.size(), 20);
-    EXPECT_EQ(result_heap.get_min(), 1);
-    EXPECT_EQ(test_heap1.size(), 10);
-    EXPECT_EQ(test_heap2.size(), 10);
+    BinomialHeap<int> result_heap = MergeHeapsCopies(test_heap1, test_heap2);
+    EXPECT_EQ(result_heap.Size(), 20);
+    EXPECT_EQ(result_heap.GetMin(), 1);
+    EXPECT_EQ(test_heap1.Size(), 10);
+    EXPECT_EQ(test_heap2.Size(), 10);
 }
 
-TEST(BinomialHeapMethods, merge) {
+TEST(BinomialHeapMethods, Merge) {
     int array1[10] = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19};
     int array2[10] = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20};
     BinomialHeap<int> test_heap1(array1, 10);
     BinomialHeap<int> test_heap2(array2, 10);
-    test_heap2.merge(test_heap1);
-    EXPECT_EQ(test_heap1.size(), 0);
-    EXPECT_EQ(test_heap2.get_min(), 1);
+    test_heap2.Merge(test_heap1);
+    EXPECT_EQ(test_heap1.Size(), 0);
+    EXPECT_EQ(test_heap2.GetMin(), 1);
 }
 
 TEST(BinomialHeapMethods, extract_min) {
     int array[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     BinomialHeap<int> test_heap(array, 10);
-    EXPECT_EQ(test_heap.size(), 10);
-    EXPECT_EQ(test_heap.extract_min(), 1);
-    EXPECT_EQ(test_heap.get_min(), 2);
-    EXPECT_EQ(test_heap.size(), 9);
+    EXPECT_EQ(test_heap.Size(), 10);
+    EXPECT_EQ(test_heap.ExtractMin(), 1);
+    EXPECT_EQ(test_heap.GetMin(), 2);
+    EXPECT_EQ(test_heap.Size(), 9);
 }
 
 void big_insert_test(string test_file_name) {
@@ -108,10 +97,10 @@ void big_insert_test(string test_file_name) {
     for (int i = 0; i < test_size; ++i) {
         int insert_key;
         test_file >> insert_key;
-        test_heap.insert(insert_key);
+        test_heap.Insert(insert_key);
         int current_min;
         test_file >> current_min;
-        EXPECT_EQ(current_min, test_heap.get_min());
+        EXPECT_EQ(current_min, test_heap.GetMin());
     }
 
     test_file.close();
@@ -119,7 +108,7 @@ void big_insert_test(string test_file_name) {
 
 TEST(BigTests, InsertTests) {
     for (int i = 1; i <= 20; ++i ) {
-        big_insert_test("insert_tests/test_" + int_to_str(i) + ".txt");
+        big_insert_test("insert_tests/test_" + to_string(i) + ".txt");
     }
 }
 
@@ -135,10 +124,10 @@ void big_extract_root_test(string test_file_name) {
         int key;
         test_file >> key;
         if (query_type == 0) {
-            test_heap.insert(key);
+            test_heap.Insert(key);
         }
         else {
-            EXPECT_EQ(test_heap.extract_min(), key);
+            EXPECT_EQ(test_heap.ExtractMin(), key);
         }
     }
 
@@ -147,6 +136,6 @@ void big_extract_root_test(string test_file_name) {
 
 TEST(BigTests, InsertAndExtractRoorTests) {
     for (int i = 1; i <= 20; ++i ) {
-        big_extract_root_test("extract_root_tests/test_" + int_to_str(i) + ".txt");
+        big_extract_root_test("extract_root_tests/test_" + to_string(i) + ".txt");
     }
 }
