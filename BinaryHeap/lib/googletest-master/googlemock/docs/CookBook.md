@@ -2532,7 +2532,7 @@ same `bool`, **plus** it clears the `ON_CALL()` statements on
 `mock_object` too.
 
 Another trick you can use to achieve the same effect is to put the
-expectations in sequences and insert calls to a dummy "check-point"
+expectations in sequences and Insert calls to a dummy "check-point"
 function at specific places. Then you can verify that the mock
 function calls do happen at the right time. For example, if you are
 exercising code:

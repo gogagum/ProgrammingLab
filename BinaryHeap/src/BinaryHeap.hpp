@@ -26,7 +26,7 @@ class node_ptr{
 public:
     template <typename> friend class BinaryHeap;
     node_ptr() = default;
-    node_ptr(const node_ptr<KeyType> & other) : key_ptr_(other.key_ptr_), index_ptr_(other.index_ptr_) { }
+    node_ptr(const node_ptr<KeyType>& other) : key_ptr_(other.key_ptr_), index_ptr_(other.index_ptr_) { }
     node_ptr<KeyType>& operator = (const node_ptr<KeyType> & other) {
         key_ptr_ = other.key_ptr_;
         index_ptr_ = other.index_ptr_;
@@ -34,7 +34,7 @@ public:
     }
     ~node_ptr() = default;
 private:
-    node_ptr(int index, const std::shared_ptr<KeyType> & key_ptr) : key_ptr_(key_ptr), index_ptr_(new int) {
+    node_ptr(int index, const std::shared_ptr<KeyType>& key_ptr) : key_ptr_(key_ptr), index_ptr_(new int) {
         *index_ptr_ = index;
     };
     KeyType& key() {
@@ -72,21 +72,21 @@ public:
         for (auto i = iterator1; i != iterator2; ++i) {
             std::shared_ptr<KeyType> new_key_ptr(new KeyType (*i));
             node_ptr<KeyType> new_node_ptr(index++, new_key_ptr);
-            buffer_.push_back(new_node_ptr);
+            buffer_.PushBack(new_node_ptr);
             ++size_;
         }
         FixHeapProperty();
     }
 
-    void SiftUp (int index) {
-        while ( index != 0 && comp_(*(buffer_[index].key_ptr_), *(buffer_[parent_index(index)].key_ptr_)) ) {
+    void SiftUp(int index) {
+        while (index != 0 && comp_(*(buffer_[index].key_ptr_), *(buffer_[parent_index(index)].key_ptr_)) ) {
             std::swap( buffer_[index], buffer_[parent_index(index)]);
             std::swap( buffer_[index].index(), buffer_[parent_index(index)].index());
             index = parent_index(index);
         }
     }
 
-    void SiftDown (int index) {
+    void SiftDown(int index) {
         while ( 2 * index + 1 < size_ ) {
             int left = 2 * index + 1;
             int right = 2  * index + 2;
@@ -103,13 +103,13 @@ public:
         }
     }
 
-    node_ptr<KeyType> insert(KeyType key) {
+    node_ptr<KeyType> Insert(KeyType key) {
         std::shared_ptr<KeyType> new_key_ptr(new KeyType (key));
-        node_ptr<KeyType> new_node_ptr(static_cast<int> (size_), new_key_ptr);
+        node_ptr<KeyType> new_node_ptr(size_, new_key_ptr);
 
-        buffer_.push_back(new_node_ptr);
-        size_++;
-        SiftUp(static_cast<int> (size_));
+        buffer_.PushBack(new_node_ptr);
+        SiftUp(size_);
+        ++size_;
         return new_node_ptr;
     }
 
@@ -122,7 +122,7 @@ public:
         assert (!Empty());
         KeyType to_return = buffer_[0].key();
         buffer_[0] = buffer_[size_-1];
-        buffer_.erase(static_cast<int> (size_) - 1);
+        buffer_.Erase(size_ - 1);
         --size_;
         SiftDown(0);
         return to_return;
@@ -132,7 +132,7 @@ public:
         int erase_index = *pointer.index_ptr_;
         std::swap(buffer_[size_ - 1], buffer_[erase_index]);
         std::swap(buffer_[size_ - 1].index(), buffer_[erase_index].index());
-        buffer_.erase(static_cast<int> (size_) - 1);
+        buffer_.Erase(size_ - 1);
         --size_;
         if (erase_index > 0 && comp_(buffer_[erase_index].key(), buffer_[parent_index(erase_index)].key())) {
             SiftUp(erase_index);
@@ -164,12 +164,12 @@ public:
     ~ BinaryHeap() = default;
 private:
     void FixHeapProperty() {
-        for (int i  = static_cast<int> (size_); i >= 0; --i) {
+        for (int i  = size_; i >= 0; --i) {
             SiftDown(i);
         }
     }
 
-    DynamicArray< node_ptr<KeyType> > buffer_;
+    DynamicArray<node_ptr<KeyType>> buffer_;
     size_t size_;
     bool (*comp_)(KeyType, KeyType);
 };

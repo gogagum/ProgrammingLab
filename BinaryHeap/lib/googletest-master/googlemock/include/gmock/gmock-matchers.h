@@ -4875,8 +4875,8 @@ UnorderedPointwise(const Tuple2Matcher& tuple2_matcher,
 //
 // Examples:
 //   ::std::set<int> page_ids;
-//   page_ids.insert(3);
-//   page_ids.insert(1);
+//   page_ids.Insert(3);
+//   page_ids.Insert(1);
 //   EXPECT_THAT(page_ids, Contains(1));
 //   EXPECT_THAT(page_ids, Contains(Gt(2)));
 //   EXPECT_THAT(page_ids, Not(Contains(4)));
@@ -5027,10 +5027,10 @@ inline internal::UnorderedElementsAreArrayMatcher<T> IsSubsetOf(
 //   EXPECT_THAT(page_ids, Each(Eq(1)));
 //   EXPECT_THAT(page_ids, Each(Eq(77)));
 //
-//   page_ids.insert(3);
+//   page_ids.Insert(3);
 //   EXPECT_THAT(page_ids, Each(Gt(0)));
 //   EXPECT_THAT(page_ids, Not(Each(Gt(4))));
-//   page_ids.insert(1);
+//   page_ids.Insert(1);
 //   EXPECT_THAT(page_ids, Not(Each(Lt(2))));
 //
 //   ::std::map<int, size_t> page_lengths;

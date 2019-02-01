@@ -12,6 +12,18 @@
 #include <fstream>
 #include "/home/gogagum/CLionProjects/Lab/BinaryHeap/src/BinaryHeap.hpp"
 
+std::string int_to_str(unsigned int num){
+    std::string ret = "";
+    if (num == 0) {
+        return "0";
+    }
+    while (num != 0) {
+        ret = (char)('0' + num % 10) + ret;
+        num /= 10;
+    }
+    return ret;
+}
+
 struct complex_num{
     complex_num() {}
     complex_num(double imz, double rmz){
@@ -61,7 +73,7 @@ TEST(HeapMethods, Insert) {
     int array[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     BinaryHeap<int> test_heap(array, 10);
     EXPECT_EQ(test_heap.Size(), 10);
-    test_heap.insert(-6);
+    test_heap.Insert(-6);
     EXPECT_EQ(test_heap.GetRoot(), -6);
 }
 
@@ -78,9 +90,9 @@ TEST(HeapConstructor, CustomComparator) {
     complex_num c1(1, 2);
     complex_num c2(42, 42);
     complex_num c3(-1, 0);
-    test_heap.insert(c1);
-    test_heap.insert(c2);
-    test_heap.insert(c3);
+    test_heap.Insert(c1);
+    test_heap.Insert(c2);
+    test_heap.Insert(c3);
     EXPECT_EQ(test_heap.GetRoot(), c3);
 }
 
@@ -88,7 +100,7 @@ TEST(node_ptr_using, insert_and_erase) {
     int array[4] = {1, 2, 3, 4};
     BinaryHeap<int> test_heap(array, 4);
     EXPECT_EQ(test_heap.GetRoot(), 1);
-    auto ptr_m100 = test_heap.insert(-100);
+    auto ptr_m100 = test_heap.Insert(-100);
     EXPECT_EQ(test_heap.GetRoot(), -100);
     test_heap.Erase(ptr_m100);
     EXPECT_EQ(test_heap.GetRoot(), 1);
@@ -98,7 +110,7 @@ TEST(node_ptr_using, insert_and_change) {
     int array[4] = {1, 2, 3, 4};
     BinaryHeap<int> test_heap(array, 4);
     EXPECT_EQ(test_heap.GetRoot(), 1);
-    auto ptr_m100 = test_heap.insert(-100);
+    auto ptr_m100 = test_heap.Insert(-100);
     EXPECT_EQ(test_heap.GetRoot(), -100);
     test_heap.Change(ptr_m100, -50);
     EXPECT_EQ(test_heap.GetRoot(), -50);
@@ -107,10 +119,10 @@ TEST(node_ptr_using, insert_and_change) {
 TEST(BigTests, test10) {
     BinaryHeap<int> test_heap;
     int min = rand();
-    test_heap.insert(min);
+    test_heap.Insert(min);
     for (int i = 1; i < 10; i++) {
         int new_num = rand();
-        test_heap.insert(new_num);
+        test_heap.Insert(new_num);
         if (new_num < min) {
             min = new_num;
         }
@@ -120,10 +132,10 @@ TEST(BigTests, test10) {
 TEST(BigTests, test100) {
     BinaryHeap<int> test_heap;
     int min = rand();
-    test_heap.insert(min);
+    test_heap.Insert(min);
     for (int i = 1; i < 100; i++) {
         int new_num = rand();
-        test_heap.insert(new_num);
+        test_heap.Insert(new_num);
         if (new_num < min) {
             min = new_num;
         }
@@ -133,10 +145,10 @@ TEST(BigTests, test100) {
 TEST(BigTests, test1000) {
     BinaryHeap<int> test_heap;
     int min = rand();
-    test_heap.insert(min);
+    test_heap.Insert(min);
     for (int i = 1; i < 1000; i++) {
         int new_num = rand();
-        test_heap.insert(new_num);
+        test_heap.Insert(new_num);
         if (new_num < min) {
             min = new_num;
         }
@@ -146,10 +158,10 @@ TEST(BigTests, test1000) {
 TEST(BigTests, test10000) {
     BinaryHeap<int> test_heap;
     int min = rand();
-    test_heap.insert(min);
+    test_heap.Insert(min);
     for (int i = 1; i < 10000; i++) {
         int new_num = rand();
-        test_heap.insert(new_num);
+        test_heap.Insert(new_num);
         if (new_num < min) {
             min = new_num;
         }
@@ -159,10 +171,10 @@ TEST(BigTests, test10000) {
 TEST(BigTests, test100000) {
     BinaryHeap<int> test_heap;
     int min = rand();
-    test_heap.insert(min);
+    test_heap.Insert(min);
     for (int i = 1; i < 100000; i++) {
         int new_num = rand();
-        test_heap.insert(new_num);
+        test_heap.Insert(new_num);
         if (new_num < min) {
             min = new_num;
         }
@@ -172,12 +184,36 @@ TEST(BigTests, test100000) {
 TEST(BigTests, test1000000) {
     BinaryHeap<int> test_heap;
     int min = rand();
-    test_heap.insert(min);
+    test_heap.Insert(min);
     for (int i = 1; i < 1000000; i++) {
         int new_num = rand();
-        test_heap.insert(new_num);
+        test_heap.Insert(new_num);
         if (new_num < min) {
             min = new_num;
         }
     };
+}
+
+void big_insert_test(std::string test_file_name) {
+    std::ifstream test_file(test_file_name);
+    int test_size;
+    test_file >> test_size;
+    BinaryHeap<int> test_heap;
+
+    for (int i = 0; i < test_size; ++i) {
+        int insert_key;
+        test_file >> insert_key;
+        test_heap.Insert(insert_key);
+        int current_min;
+        test_file >> current_min;
+        EXPECT_EQ(current_min, test_heap.GetRoot());
+    }
+
+    test_file.close();
+}
+
+TEST(BigTests, InsertTests) {
+    for (int i = 1; i <= 20; ++i ) {
+        big_insert_test("insert_tests/test_" + int_to_str(i) + ".txt");
+    }
 }
