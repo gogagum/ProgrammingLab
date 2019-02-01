@@ -5,7 +5,7 @@
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
 #include <fstream>
-#include "BinomialHeap.hpp"
+#include "/home/gogagum/CLionProjects/Lab/BinomialHeap/src/BinomialHeap.hpp"
 
 using std::string;
 using std::ifstream;
@@ -134,7 +134,7 @@ void big_extract_root_test(string test_file_name) {
     test_file.close();
 }
 
-TEST(BigTests, InsertAndExtractRoorTests) {
+TEST(BigTests, InsertAndExtractRootTests) {
     for (int i = 1; i <= 20; ++i ) {
         big_extract_root_test("extract_root_tests/test_" + to_string(i) + ".txt");
     }

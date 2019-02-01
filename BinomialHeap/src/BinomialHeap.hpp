@@ -2,8 +2,8 @@
 // Created by gogagum on 26.10.18.
 //
 
-#ifndef BINOMIAL_HEAP_HPP
-#define BINOMIAL_HEAP_HPP
+#ifndef BINOMIALHEAP_HPP
+#define BINOMIALHEAP_HPP
 
 #include <glob.h>
 #include <cassert>
@@ -266,4 +266,4 @@ BinomialHeap<KeyType>& Merge(BinomialHeap<KeyType> &b1, BinomialHeap<KeyType> &b
     return *merged;
 }
 
-#endif //BINOMIAL_HEAP_HPP
+#endif //BINOMIALHEAP_HPP
