@@ -33,15 +33,15 @@ public:
         for (int i = 0; (size >> i) > 0; ++i) {
             if ((size >> i) & 1) {
                 int length_of_block = (1<<i);
-                auto nodes_to_merge = new shared_ptr<node<KeyType>>[length_of_block];
+                auto nodes_to_merge = new shared_ptr<Node<KeyType>>[length_of_block];
                 for (int j = 0; j < length_of_block; ++j) {
-                    nodes_to_merge[j] = shared_ptr<node<KeyType>>(new node<KeyType>);
+                    nodes_to_merge[j] = shared_ptr<Node<KeyType>>(new Node<KeyType>);
                     nodes_to_merge[j]->value_ = array[pop_index];
                     ++pop_index;
                 }
-                for (int curr_number_of_trees = length_of_block; curr_number_of_trees >= 2; curr_number_of_trees >>= 1) {
-                    for (int k = 0; k < curr_number_of_trees / 2; ++k) {
-                        nodes_to_merge[k] = merge_trees(nodes_to_merge[k*2], nodes_to_merge[k*2 + 1]);
+                for (int number_of_trees = length_of_block; number_of_trees >= 2; number_of_trees >>= 1) {
+                    for (int k = 0; k < number_of_trees / 2; ++k) {
+                        nodes_to_merge[k] = MergeTrees(nodes_to_merge[k*2], nodes_to_merge[k*2 + 1]);
                     }
                 }
                 roots_.PushBack(nodes_to_merge[0]);
@@ -57,8 +57,8 @@ public:
      : size_(other.size_), roots_(), comp_(other.comp_) {
         for (int i = 0; i < other.roots_.Size(); ++i) {
             if (other.roots_[i] != nullptr) {
-                shared_ptr<node<KeyType>> copied_node(new node<KeyType>);
-                copied_node->copy(*(other.roots_[i]));
+                shared_ptr<Node<KeyType>> copied_node(new Node<KeyType>);
+                copied_node->Copy(*(other.roots_[i]));
                 roots_.PushBack(copied_node);
             }
             else {
@@ -69,7 +69,7 @@ public:
 
     void Insert(KeyType key) {
         BinomialHeap<KeyType> to_merge(comp_);
-        shared_ptr<node<KeyType>> one_element_node(new node<KeyType>);
+        shared_ptr<Node<KeyType>> one_element_node(new Node<KeyType>);
         one_element_node->value_ = key;
         one_element_node->degree_ = 0;
         ++to_merge.size_;
@@ -99,7 +99,7 @@ public:
 
     void Merge(BinomialHeap<KeyType> &other) { //clears other
         assert(comp_ == other.comp_);
-        shared_ptr<node<KeyType>> remembered = nullptr;
+        shared_ptr<Node<KeyType>> remembered = nullptr;
         size_ += other.Size();
         auto max_size_of_new_tree = max(roots_.Size(), other.roots_.Size()) + 1;
 
@@ -107,13 +107,13 @@ public:
             if (i < min(roots_.Size(), other.roots_.Size())) {
                 if (roots_[i] != nullptr && other.roots_[i] != nullptr) {
                     auto old_remembered = remembered;
-                    remembered = merge_trees(roots_[i], other.roots_[i]);
+                    remembered = MergeTrees(roots_[i], other.roots_[i]);
                     roots_[i] = old_remembered;
                     continue;
                 }
                 if (roots_[i] != nullptr) { // && other.roots[i] == nullptr
                     if (remembered != nullptr) {
-                        remembered = merge_trees(remembered, roots_[i]);
+                        remembered = MergeTrees(remembered, roots_[i]);
                         roots_[i] = nullptr;
                     }
                     //else { roots[i] = roots[i]; }
@@ -121,7 +121,7 @@ public:
                 }
                 if (other.roots_[i] != nullptr) { // && roots[i] == nullptr
                     if (remembered != nullptr) {
-                        remembered = merge_trees(remembered, other.roots_[i]);
+                        remembered = MergeTrees(remembered, other.roots_[i]);
                     }
                     else {
                         roots_[i] = other.roots_[i];
@@ -138,7 +138,7 @@ public:
                 if (i < roots_.Size()) {
                     if (remembered != nullptr ) {
                         if (roots_[i] != nullptr) {
-                            remembered = merge_trees(remembered, roots_[i]);
+                            remembered = MergeTrees(remembered, roots_[i]);
                             roots_[i] = nullptr;
                         }
                         else {
@@ -155,7 +155,7 @@ public:
                     }
                     else {
                         if (other.roots_[i] != nullptr) {
-                            remembered = merge_trees(remembered, other.roots_[i]);
+                            remembered = MergeTrees(remembered, other.roots_[i]);
                             roots_.PushBack(nullptr);
                         }
                         else {
@@ -200,29 +200,29 @@ public:
 
 private:
     template <typename _KeyType>
-    struct node {
-        node() : children_(), degree_(0) {}
+    struct Node {
+        Node() : children_(), degree_(0) {}
 
-        node(const node<_KeyType> &other) : children_(), degree_(0) {
-            copy(other);
+        Node(const Node<_KeyType>& other) : children_(), degree_(0) {
+            Copy(other);
         }
 
-        void copy(const node<_KeyType> &other) {
+        void Copy(const Node<_KeyType>& other) {
             value_ = other.value_;
             degree_ = other.degree_;
             for (int i = 0; i < other.children_.Size(); ++i) {
-                shared_ptr<node<_KeyType>> copied_node( new node<_KeyType> );
-                copied_node->copy(*other.children_[i]);
+                shared_ptr<Node<_KeyType>> copied_node(new Node<_KeyType>);
+                copied_node->Copy(*other.children_[i]);
                 children_.PushBack(copied_node);
             }
         }
         _KeyType value_;
         int degree_;
-        DynamicArray<shared_ptr<node<_KeyType>>> children_;
+        DynamicArray<shared_ptr<Node<_KeyType>>> children_;
     };
 
     template <typename _KeyType>
-    shared_ptr<node<_KeyType>> merge_trees(shared_ptr <node<_KeyType>> n1, shared_ptr <node<_KeyType>> n2) {
+    shared_ptr<Node<_KeyType>> MergeTrees(shared_ptr <Node<_KeyType>> n1, shared_ptr <Node<_KeyType>> n2) {
         assert(n1 != nullptr && n2 != nullptr && (n1->degree_ == n2->degree_));
         if (comp_(n2->value_, n1->value_)) {
             swap(n1, n2);
@@ -247,7 +247,7 @@ private:
     }
 
     bool (*comp_)(KeyType, KeyType);
-    DynamicArray<shared_ptr<node<KeyType>>> roots_;
+    DynamicArray<shared_ptr<Node<KeyType>>> roots_;
     size_t size_;
 };
 
