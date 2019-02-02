@@ -6,7 +6,7 @@
 #include <gmock/gmock.h>
 #include <fstream>
 #include <string>
-#include "FibonacciHeap.hpp"
+#include "/home/gogagum/CLionProjects/Lab/FibonacciHeap/src/FibonacciHeap.hpp"
 
 using std::ifstream;
 using std::string;
@@ -25,38 +25,38 @@ string int_to_str(unsigned int num){
 
 TEST (FibonacciHeapConstructor, default_constructor) {
     FibonacciHeap<int> test_heap;
-    EXPECT_EQ(test_heap.size(), 0);
+    EXPECT_EQ(test_heap.Size(), 0);
 }
 
 TEST (FibonacciHeapMethods, insert) {
     FibonacciHeap<int> test_heap;
-    test_heap.insert(5);
-    EXPECT_EQ(test_heap.get_root(), 5);
-    EXPECT_EQ(test_heap.size(), 1);
+    test_heap.Insert(5);
+    EXPECT_EQ(test_heap.GetRoot(), 5);
+    EXPECT_EQ(test_heap.Size(), 1);
 }
 
 TEST (FibonacciHeapMethods, insert2) {
     FibonacciHeap<int> test_heap;
-    test_heap.insert(5);
-    EXPECT_EQ(test_heap.get_root(), 5);
-    test_heap.insert(3);
-    EXPECT_EQ(test_heap.get_root(), 3);
-    test_heap.insert(6);
-    EXPECT_EQ(test_heap.get_root(), 3);
-    EXPECT_EQ(test_heap.size(), 3);
+    test_heap.Insert(5);
+    EXPECT_EQ(test_heap.GetRoot(), 5);
+    test_heap.Insert(3);
+    EXPECT_EQ(test_heap.GetRoot(), 3);
+    test_heap.Insert(6);
+    EXPECT_EQ(test_heap.GetRoot(), 3);
+    EXPECT_EQ(test_heap.Size(), 3);
 }
 
 TEST (FibonacciHeapMethods, merge) {
     FibonacciHeap<int> first;
     FibonacciHeap<int> second;
     for (int i = 0; i < 5; i++) {
-        first.insert(2 * i + 1);
-        second.insert(2 * i);
+        first.Insert(2 * i + 1);
+        second.Insert(2 * i);
     }
-    first.merge(second);
-    EXPECT_EQ(second.empty(), true);
-    EXPECT_EQ(first.get_root(), 0);
-    EXPECT_EQ(first.size(), 10);
+    first.Merge(second);
+    EXPECT_EQ(second.Empty(), true);
+    EXPECT_EQ(first.GetRoot(), 0);
+    EXPECT_EQ(first.Size(), 10);
 }
 
 TEST (FibonacciHeapMethods, merge2) {
@@ -64,46 +64,46 @@ TEST (FibonacciHeapMethods, merge2) {
     FibonacciHeap<int> second;
     FibonacciHeap<int> third;
     for (int i = 0; i < 5; i++) {
-        first.insert(3 * i);
-        second.insert(3 * i + 1);
-        third.insert(3 * i + 2);
+        first.Insert(3 * i);
+        second.Insert(3 * i + 1);
+        third.Insert(3 * i + 2);
     }
-    second.merge(first);
-    third.merge(second);
-    EXPECT_EQ(first.empty(), true);
-    EXPECT_EQ(second.empty(), true);
-    EXPECT_EQ(third.empty(), false);
-    EXPECT_EQ(third.get_root(), 0);
-    EXPECT_EQ(third.size(), 15);
+    second.Merge(first);
+    third.Merge(second);
+    EXPECT_EQ(first.Empty(), true);
+    EXPECT_EQ(second.Empty(), true);
+    EXPECT_EQ(third.Empty(), false);
+    EXPECT_EQ(third.GetRoot(), 0);
+    EXPECT_EQ(third.Size(), 15);
 }
 
 TEST (FibonacciHeapMethods, extract_root) {
     FibonacciHeap<int> test_heap;
     for (int i = 0; i < 5; i++) {
-        test_heap.insert(i);
+        test_heap.Insert(i);
     }
     for (int i = 0; i < 5; i++) {
-        EXPECT_EQ(test_heap.extract_root(), i);
-        EXPECT_EQ(test_heap.size(), 5 - i - 1);
+        EXPECT_EQ(test_heap.ExtractRoot(), i);
+        EXPECT_EQ(test_heap.Size(), 5 - i - 1);
     }
-    EXPECT_EQ(test_heap.size(), 0);
+    EXPECT_EQ(test_heap.Size(), 0);
 }
 
 TEST (FibonacciHeapMethods, decrease_key) {
     FibonacciHeap<int> test_heap;
-    auto to_dectease = test_heap.insert(5);
-    test_heap.decrease_key(to_dectease, 4);
-    EXPECT_EQ(test_heap.get_root(), 4);
+    auto to_dectease = test_heap.Insert(5);
+    test_heap.DecreaseKey(to_dectease, 4);
+    EXPECT_EQ(test_heap.GetRoot(), 4);
 }
 
 
 TEST (FibonacciHeapMethods, decrease_key2) {
     FibonacciHeap<int> test_heap;
-    auto to_dectease = test_heap.insert(5);
-    test_heap.insert(3);
-    test_heap.decrease_key(to_dectease, 2);
-    EXPECT_EQ(test_heap.extract_root(), 2);
-    EXPECT_EQ(test_heap.get_root(), 3);
+    auto to_dectease = test_heap.Insert(5);
+    test_heap.Insert(3);
+    test_heap.DecreaseKey(to_dectease, 2);
+    EXPECT_EQ(test_heap.ExtractRoot(), 2);
+    EXPECT_EQ(test_heap.GetRoot(), 3);
 }
 
 void big_insert_test(string test_file_name) {
@@ -115,10 +115,10 @@ void big_insert_test(string test_file_name) {
     for (int i = 0; i < test_size; ++i) {
         int insert_key;
         test_file >> insert_key;
-        test_heap.insert(insert_key);
+        test_heap.Insert(insert_key);
         int current_min;
         test_file >> current_min;
-        EXPECT_EQ(current_min, test_heap.get_root());
+        EXPECT_EQ(current_min, test_heap.GetRoot());
     }
 
     test_file.close();
@@ -142,10 +142,10 @@ void big_extract_root_test(string test_file_name) {
         int key;
         test_file >> key;
         if (query_type == 0) {
-            test_heap.insert(key);
+            test_heap.Insert(key);
         }
         else {
-            EXPECT_EQ(test_heap.extract_root(), key);
+            EXPECT_EQ(test_heap.ExtractRoot(), key);
         }
     }
 
