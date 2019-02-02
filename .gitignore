@@ -1,0 +1,9 @@
+BinaryHeap/.idea/
+BinaryHeap/lib/googletest-master/
+BinaryHeap/cmake-build-debug/CMakeFiles/
+BinaryHeap/cmake-build-debug/BinaryHeap.cbp
+BinaryHeap/cmake-build-debug/BinaryHeap
+BinaryHeap/cmake-build-debug/Makefile
+BinaryHeap/cmake-build-debug/cmake_install.cmake
+BinaryHeap/cmake-build-debug/CMakeCache.txt
+BinaryHeap/cmake-build-debug/lib/
